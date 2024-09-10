@@ -22,8 +22,8 @@ router.post('/increment-pledge', async (req, res) => {
         // Find the campaign by title and increment the pledges field
         const updatedCampaign = await Campaign.findOneAndUpdate(
             { title: title },
-            { $inc: { pledges: 1 } }, 
-            { new: true } 
+            { $inc: { pledges: 1 } },
+            { new: true }
         );
 
         // If the campaign is not found

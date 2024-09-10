@@ -5,11 +5,12 @@ const app = express();
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(cors());
-app.use(express.json()); 
+app.use(express.json());
 require('dotenv').config();
 
 
-const addCampaign = require('./routes/campaign');
+const Campaign = require('./routes/campaign');
+const Quotes = require('./routes/quote')
 
 const connectDB = async () => {
   try {
@@ -26,7 +27,8 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-app.use('/campaigns',addCampaign);
+app.use('/campaigns', Campaign);
+app.use('/quotes', Quotes)
 
 
 const port = process.env.PORT || 5000;
