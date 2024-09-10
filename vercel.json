@@ -8,7 +8,7 @@
     ],
     "routes": [
       {
-        "src": "/(.*)",
+        "src": "/campaigns(.*)",
         "dest": "index.js"
       }
     ]
