@@ -22,7 +22,12 @@ const connectDB = async () => {
 };
 connectDB();
 
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
 app.use('/campaigns',addCampaign);
+
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
