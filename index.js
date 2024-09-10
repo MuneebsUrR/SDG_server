@@ -22,7 +22,7 @@ const connectDB = async () => {
 };
 connectDB();
 
-app.use('/campaigns',addCampaign)
+app.use('/campaigns',addCampaign);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
