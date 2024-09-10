@@ -24,5 +24,14 @@ router.get('/get-all',async(req,res)=>{
     }
 })  
 
+//route to get a last added latest single quote
+router.get('/get-latest',async(req,res)=>{
+    try {
+        const quote = await Quote.findOne().sort({date: -1});
+        res.status(200).json(quote)
+    } catch (error) {
+        res.status(500).json({message:'Error getting quote',error})
+    }
+})
 
 module.exports = router;
