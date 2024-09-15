@@ -41,6 +41,7 @@ router.post('/increment-pledge', async (req, res) => {
 router.get('/get-all', async (req, res) => {
     try {
         const campaigns = await Campaign.find();
+        console.log(campaigns);
         res.status(200).json(campaigns);
     } catch (error) {
         res.status(500).json({ message: 'Error getting campaigns', error });

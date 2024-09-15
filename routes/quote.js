@@ -28,6 +28,7 @@ router.get('/get-all',async(req,res)=>{
 router.get('/get-latest',async(req,res)=>{
     try {
         const quote = await Quote.findOne().sort({date: -1});
+        console.log(quote)
         res.status(200).json(quote)
     } catch (error) {
         res.status(500).json({message:'Error getting quote',error})
